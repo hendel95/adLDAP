@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This file contains a working example of adLDAP in operation.
  *
@@ -11,21 +10,24 @@ if (!file_exists(__DIR__.'/../vendor/autoload.php')) {
 }
 require_once __DIR__.'/../vendor/autoload.php';
 
-use adLDAP\adLDAP;
-use adLDAP\Exceptions\adLDAPException;
+//use adLDAP\adLDAP;
+use Adldap\Adldap;
+//use adLDAP\Exceptions\adLDAPException;
+
 
 // Set up all options.
 $options = [
+    'user_id_key' => 'samaccountname',
     'account_suffix' => '',
-    'base_dn' => null,
-    'domain_controllers' => [''],
-    'admin_username' => null,
-    'admin_password' => null,
+    'base_dn' => 'DC=payad,DC=kakaopaycorp,DC=net',
+    'domain_controllers' => ['paygsad.kakaopaycorp.net'],
+    'admin_username' => 'seadmin',
+    'admin_password' => 'vpdl@qlqjs!1',
     'real_primarygroup' => '',
     'use_ssl' => false,
     'use_tls' => false,
     'recursive_groups' => true,
-    'ad_port' => adLDAP::ADLDAP_LDAP_PORT,
+    'ad_port' => 389,
     'sso' => '',
 ];
 // Update options from $_POST.

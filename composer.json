@@ -1,4 +1,5 @@
 {
+    "adldap/adldap": "5.0.*",
     "name": "adldap/adldap",
     "type": "library",
     "description": "A PHP LDAP Library for Active Directory Manipulation",
